@@ -67,7 +67,7 @@ class Mailer implements MailerInterface
         $subject = $renderedLines[0];
         $body = implode("\n", array_slice($renderedLines, 1));
 
-        $message = \Swift_Message::newInstance()
+        $message = (new \Swift_Message())
             ->setSubject($subject)
             ->setFrom($fromEmail)
             ->setTo($toEmail)
